@@ -138,7 +138,7 @@ footer a {
       max-width: 767px;
   }
 
- nav li,
+  nav li,
   nav li:nth-child(even),
   nav li:nth-child(odd) {
     display: inline-block;
@@ -159,7 +159,6 @@ footer a {
     grid-gap: 1em;
     grid-template-columns: 1fr 1fr;
   }
-
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 850px) { 
@@ -192,6 +191,4 @@ footer a {
   .aside {
     display: block;
   }
-
-
 }

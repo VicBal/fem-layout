@@ -7,7 +7,7 @@ html {
 }
 body {
 	font-family: "Cabin", Arial, Geneva, sans-serif;
-	background-image: url(../img/clouds.png);
+	background-image: url(img/clouds.png);
 	margin: 0px;
 	padding: 0px;
 }
@@ -15,6 +15,7 @@ h1,h2,h3,h4,h5,h6 {
   font-family: 'Niconne', cursive;
   font-weight: normal;
   color: #C80060;
+  margin-top: 0;
 }
 .wrapper {
 	margin: 0 auto;
@@ -24,17 +25,17 @@ article img {
   width: 100%;
   max-width: 250px;
 }
-nav {
-  background: url(../img/scallop.png) repeat-x;
+.bkgdimg {
+  height: 12px;
+    background: url(img/scallop.png) repeat-x ;
 }
-nav ul.full-width {
+nav ul {
   list-style-type: none;
   background-color: #e6bf98; 
   padding: .75em;
-  margin: 12px 0 0 0;
+  margin: 0;
   border-bottom: 3px solid #cc8850;
   overflow: auto;
-
 }
 /* splits nav into 2 columns
 http://stackoverflow.com/questions/13104818/simple-2-column-navigation-with-css-and-a-single-list */
@@ -58,12 +59,14 @@ nav a:hover {
   color:#00c4c7;
 }
 
-div.row {
+.content,
+.gallery {
   background-color: #fff6e0;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  padding: 1em;
+  padding: 2em;
 }
+
 .floatleft {
   float: left;
   margin: 0 1em 1em 0;
@@ -75,6 +78,7 @@ div.row {
 [class*='sidebar'] {
   border: 1px solid #00c4c7;
   border-radius: 10px;
+  margin: 3em 0;
 }
 [class*='sidebar'] h3 {
   margin: 0;
@@ -126,32 +130,22 @@ footer a {
   color: white;
   text-decoration: none;
 }
+.gallery ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	flex-flow: row wrap;
+}
+.gallery li {
+	flex: 0 0 100%;
+}
+.gallery img { 
+  width: 100%; 
+  border-radius: 10px;
+}
 /* grid system */
-.row {
-  display: flex;
-  flex-flow: row wrap;
-  flex: 0 1 auto;
-}
-[class*="col-"] {
-  flex: 0 0 92%;
-  margin: 0 4%;
-}
-.full-width {
-  flex: 0 0 100%;
-  margin: 0;
-}
-[class*="sidebar"] {
-  flex: 0 0 100%;
-  margin-bottom: 2em;
-  margin-right: 1em;
-}
-.row.col-1-4 {
-  margin-top: 3em;
-}
-/* global alignment options */
-.reverse {
-  flex-direction: row-reverse;
-}
+
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 550px) { 
@@ -159,38 +153,32 @@ footer a {
       width: 97%;
       max-width: 767px;
   }
-div.row {
-  padding: 0 2em;
-}
+ .gallery li {
+		flex: 0 0 50%;
+	}
+
  nav li,
   nav li:nth-child(even),
   nav li:nth-child(odd) {
     display: inline-block;
-    float: none;
     width: auto;
+    float: none;
     padding: 0;
   }
   nav a {
-      padding: 0em 1em 0em 1em;
+    padding: 0em 1em;
+
   }
-  [class*='col-']{
-    margin-left: 4%;
-    margin-right: 0%;
+  .content {
+    display: grid;
+    grid-gap: 1em;
   }
-  .col-1-2,
-  .col-2,
-  [class*="sidebar"] {
-    flex: 0 0 44%; 
+  .aside {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr;
   }
-  .col-1-4,
-  .col-3,
-  .col-4 {
-    flex: 0 0 92%;
-  }
-  .reverse [class*='col-'] {
-    margin-left: 0%;
-    margin-right: 4%;
-  }
+
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 850px) { 
@@ -213,40 +201,18 @@ div.row {
   nav li:nth-child(even),
   nav li:nth-child(odd) {
     display: inline-block;
-    float: none;
     width: auto;
     padding: 0;
   }
-  nav a {
-      padding: 0em 1em 0em 1em;
+  .content {
+       grid-template-columns: 3fr 1fr;
+       grid-gap: 3em;
+    }
+  .aside {
+    display: block;
   }
-  .col-1-2,
-  .col-1-4 {
-    flex: 0 0 20%;
-  }
-  .col-2,
-  .col-2-4 {
-    flex: 0 0 44%;
-  }
-  .col-3 {
-    flex: 0 0 68%;
-  }
-  .col-4 {
-    flex: 0 0 92%;
-  }
-  [class*="sidebar"] {
-    flex: 0 0 100%;
-  }
-  .order-first {
-    order: 1;
-  } 
-  .order-second {
-    order: 2;
-  }
-  .order-third {
-    order: 3;
-  }
-  .order-fourth {
-    order: 4;
-  }
+  /* .gallery li {
+		flex: 0 0 33%;
+	} */
+
 }

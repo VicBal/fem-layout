@@ -24,6 +24,11 @@ article aside {
 	padding: 0.5em;
 	border-radius: 0.5em;
 }
+.nested {
+	display: grid;
+	grid-template-columns: auto;
+	grid-gap: 1em;
+}
 
 @media (min-width: 650px) { 
 	header {
@@ -37,6 +42,18 @@ article aside {
 	.sidebar {
 		grid-column: 2 / 3;
 		grid-row: 1 / 3;
+	}
+
+	.nested {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-areas: 
+			"aside1 . aside3";
+	}
+	.aside1 {
+		grid-area: aside1;
+	}
+    .aside3 {
+		grid-area: aside3;
 	}
 }
 @media (min-width: 1000px) { 
@@ -52,5 +69,5 @@ article aside {
 		grid-column: 1 / 2;
 		grid-row: 1 / 3;
 	}
-
+	
 }

@@ -1,8 +1,14 @@
 .bkgdimg {
 	background: url(img/mom-300.jpg) no-repeat;
-	height: 50px;
+	/* height: 50px; */
 }
 
+@media (min-width: 1px) {
+	.bkgdimg {
+		background: url(img/mom-300.jpg) no-repeat;
+		height: 50px;
+	}
+}
 @media (min-width: 500px) {
 	.bkgdimg {
 		background: url(img/mom-767.jpg) no-repeat;

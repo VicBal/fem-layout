@@ -17,12 +17,29 @@ h1,h2,h3,h4,h5,h6 {
   color: #C80060;
 }
 .wrapper {
-	margin: 0 auto;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 article img {
   border-radius: 10px;
+}
+img.responsive {
   width: 100%;
   max-width: 250px;
+}
+.button {
+  background-color: #c80060;
+  color: white;
+  padding: 0.3em 1em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  display: inline-block;
+  border: 2px solid #c80060;
+}
+.button:hover {
+  color: #c80060;
+  background-color: white;
 }
 nav {
   background: url(../img/scallop.png) repeat-x;
@@ -64,14 +81,22 @@ div.row {
   border-bottom-right-radius: 10px;
   padding: 1em;
 }
-.floatleft {
-  float: left;
-  margin: 0 1em 1em 0;
+/* image gallery */
+ul.gallery {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
 }
-.floatright {
-  float: right;
-  margin: 0 0 1em 1em;
+.gallery li {
+  flex: 0 0 100%;
 }
+.gallery img { 
+  width: 100%; 
+  max-width: 300px;
+}
+
 [class*='sidebar'] {
   border: 1px solid #00c4c7;
   border-radius: 10px;
@@ -152,7 +177,12 @@ footer a {
 .reverse {
   flex-direction: row-reverse;
 }
-
+.floatright,
+.floatleft {
+  float: none;
+  display: block;
+  margin: 0 auto;
+}
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 550px) { 
   .wrapper {
@@ -161,6 +191,10 @@ footer a {
   }
 div.row {
   padding: 0 2em;
+}
+.heading {
+  background: url(../img/header-850.jpg) no-repeat;
+  height: 130px;
 }
  nav li,
   nav li:nth-child(even),
@@ -172,6 +206,17 @@ div.row {
   }
   nav a {
       padding: 0em 1em 0em 1em;
+  }
+  .floatleft {
+    float: left;
+    margin: 0 1em 1em 0;
+  }
+  .floatright {
+    float: right;
+    margin: 0 0 1em 1em;
+  }
+  .gallery li {
+    flex: 0 0 50%;
   }
   [class*='col-']{
     margin-left: 4%;

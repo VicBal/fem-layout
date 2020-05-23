@@ -3,7 +3,7 @@ Flexbox Properties
 Parent (Flex Container)
 	display: flex | inline-flex;
 
-	flex-direction: row | row-reverse | column | column-reverse;
+	flex-direction: row | row-reverse | column | column-reverseb;
 
 	flex-wrap: wrap | nowrap | wrap-reverse;
 

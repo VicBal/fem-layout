@@ -5,7 +5,14 @@ ul {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
-	border: 1px dotted red;
+	border: 5px dotted red;
+	display: flex;
+	/* flex-direction: row;
+	flex-wrap: nowrap; */
+	flex-flow: row wrap;
+	justify-content: center;
+	/* height: 400px; */
+	align-items: baseline;
 }
 li {
 	border: 1px solid #999;
@@ -13,9 +20,8 @@ li {
 	padding: 0.5em;
 }
 
-
-
-
-
-
-
+.flex2 {
+	border: 3px dashed blue;
+	order: 2;
+	flex: 2 1 25%;
+}
